@@ -24,14 +24,14 @@ def analyze() :
         speak('Sentence is Negative')
 
     else : 
-        Label(gui, text = 'Couldnt Analyze Text', bg = 'cyan').pack(fill = X, side = BOTTOM)
+        Label(gui, text = 'Couldn't Analyze Text', bg = 'cyan').pack(fill = X, side = BOTTOM)
 
 gui = Tk()
 gui.geometry('500x300')
 gui.title('Sentiment Analyzer')
 
 e1_value = StringVar()
-Entry(gui, textvariable = e1_value, font = 'comicsnams 20', justify = CENTER).pack(pady = 80)
+Entry(gui, textvariable = e1_value, font = 'comicsansms 20', justify = CENTER).pack(pady = 80)
 
 Button(gui, text = 'Analyze', command = analyze).pack()
 
