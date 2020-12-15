@@ -2,6 +2,12 @@
 from tkinter import *
 from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
+import pyttsx3
+
+def speak(text) : 
+    engine = pyttsx3.init('sapi5')
+    engine.say(text)
+    engine.runAndWait()
 
 def analyze() : 
 
@@ -11,9 +17,11 @@ def analyze() :
 
     if positivity > negativity : 
         Label(gui, text = 'Sentence Is Positive 😍', bg = 'cyan').pack(fill = X, side = BOTTOM)
+        speak('Sentence is Positive')
 
     elif positivity < negativity : 
         Label(gui, text = 'Sentence Is Negative 😞', bg = 'cyan').pack(fill = X, side = BOTTOM)
+        speak('Sentence is Negative')
 
     else : 
         Label(gui, text = 'Couldnt Analyze Text', bg = 'cyan').pack(fill = X, side = BOTTOM)
